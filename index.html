@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="OneVLA: A Unified Framework for Embodied Tasks.">
+  <meta name="keywords" content="OneVLA, Vision-Language-Action, Embodied AI, Navigation, Manipulation, Robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OneVLA: A Unified Framework for Embodied Tasks</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <p class="project-kicker">Unified Vision-Language-Action Model</p>
+            <h1 class="title is-1 publication-title">OneVLA: A Unified Framework for Embodied Tasks</h1>
+            <p class="subtitle is-4 project-tagline">
+              A single VLA architecture for both navigation and manipulation, without task-specific model variants.
+            </p>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Lingfeng Zhang<sup>1,2,3</sup>,</span>
+              <span class="author-block">Xiaoshuai Hao<sup>3,&dagger;,&ddagger;</sup>,</span>
+              <span class="author-block">Yingbo Tang<sup>3,4</sup>,</span>
+              <span class="author-block">Lei Zhou<sup>3</sup>,</span>
+              <span class="author-block">Shuyi Zhang<sup>4</sup>,</span>
+              <span class="author-block">Jinkun Liu<sup>1</sup>,</span>
+              <span class="author-block">Hongsheng Li<sup>1</sup>,</span>
+              <span class="author-block">Chenhao Zhang<sup>5</sup>,</span>
+              <span class="author-block">Qiang Zhang<sup>6</sup>,</span>
+              <span class="author-block">Hangjun Ye<sup>3</sup>,</span>
+              <span class="author-block">Xiaojun Liang<sup>2</sup>,</span>
+              <span class="author-block">Long Chen<sup>3</sup>,</span>
+              <span class="author-block">Wenbo Ding<sup>1,&dagger;</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors affiliation-block">
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>
+              <span class="author-block"><sup>2</sup>Pengcheng Laboratory</span>
+              <span class="author-block"><sup>3</sup>Xiaomi EV</span>
+              <span class="author-block"><sup>4</sup>Institute of Automation, Chinese Academy of Sciences</span>
+              <span class="author-block"><sup>5</sup>Peking University</span>
+              <span class="author-block"><sup>6</sup>HKUST(GZ)</span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>&dagger;</sup>Corresponding authors</span>
+              <span class="author-block"><sup>&ddagger;</sup>Project leader</span>
+            </div>
+
+            <div class="publication-links is-flex is-justify-content-center is-flex-wrap-wrap">
+              <span class="link-block">
+                <a href="./static/pdfs/onevla.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/linglingxiansen/OneVLA" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-light is-disabled" aria-disabled="true">
+                  <span class="icon"><i class="fas fa-cube"></i></span>
+                  <span>Model</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="project-figure hero-figure">
+          <img src="./static/images/fig1.png" alt="OneVLA overview and embodied tasks">
+        </figure>
+        <div class="teaser-panel">
+          <div class="columns is-vcentered">
+            <div class="column is-5">
+              <div class="instruction-bubble">
+                <span class="bubble-label">Navigation</span>
+                <p>Follow language instructions through unseen environments.</p>
+              </div>
+              <div class="instruction-bubble is-response">
+                <span class="bubble-label">Manipulation</span>
+                <p>Execute continuous 7-DOF robot control from visual observations.</p>
+              </div>
+            </div>
+            <div class="column">
+              <h2 class="title is-3 teaser-title">One model, two embodied capabilities</h2>
+              <p>
+                OneVLA unifies navigation and manipulation with a shared vision-language backbone,
+                a flow-matching action head, and an 11-dimensional action space that covers both
+                discrete navigation commands and continuous manipulation actions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Navigation and manipulation are fundamental capabilities of embodied intelligence,
+              enabling robots to interpret natural language commands and interact physically with
+              their surroundings. However, current Vision-Language-Action models often rely on
+              task-specific architectures, specializing in either navigation or manipulation and
+              limiting their use as general-purpose robotic agents.
+            </p>
+            <p>
+              OneVLA introduces a unified architecture that integrates these distinct tasks into a
+              single framework. It uses a unified action head to generate both navigation and
+              manipulation actions without task-specific variants, and adopts a multi-stage
+              progressive training strategy with curated data construction and Chain-of-Thought
+              fine-tuning. Experiments in simulated and real-world environments show that OneVLA
+              achieves state-of-the-art performance and that navigation and manipulation can
+              mutually reinforce each other during joint training.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section is-light-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method Overview</h2>
+          <p class="section-lead">
+            OneVLA learns shared vision-language representations and predicts task-specific actions
+            through a single unified action head.
+          </p>
+        </div>
+      </div>
+      <figure class="project-figure">
+        <img src="./static/images/fig2.png" alt="Overall framework of OneVLA">
+        <figcaption>
+          Overall framework of OneVLA. Multimodal observations and language instructions are encoded
+          by a unified vision-language backbone, then decoded into navigation or manipulation actions
+          in an 11-dimensional action space.
+        </figcaption>
+      </figure>
+      <div class="pipeline-grid">
+        <div class="pipeline-card">
+          <span class="pipeline-index">01</span>
+          <h3>Unified Inputs</h3>
+          <p>Multi-view RGB observations, language instructions, and optional robot state are processed by one shared backbone.</p>
+        </div>
+        <div class="pipeline-card">
+          <span class="pipeline-index">02</span>
+          <h3>Dual Output</h3>
+          <p>The model generates language reasoning and future robot actions in a single forward pass.</p>
+        </div>
+        <div class="pipeline-card">
+          <span class="pipeline-index">03</span>
+          <h3>Unified Action Space</h3>
+          <p>Four navigation dimensions and seven manipulation dimensions are concatenated into one 11D action representation.</p>
+        </div>
+        <div class="pipeline-card">
+          <span class="pipeline-index">04</span>
+          <h3>Task-Aware Loss</h3>
+          <p>Dimension-specific masks supervise only the relevant action dimensions for each embodied task.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Progressive Training</h2>
+          <p class="section-lead">
+            A three-stage curriculum first builds manipulation skill, then introduces navigation for
+            cross-task transfer, and finally refines the model with Chain-of-Thought data.
+          </p>
+        </div>
+      </div>
+      <figure class="project-figure">
+        <img src="./static/images/fig3.png" alt="Multi-stage training strategy of OneVLA">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section is-light-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <p class="section-lead">
+            OneVLA achieves strong performance across navigation and manipulation while using a
+            single 3B unified model.
+          </p>
+        </div>
+      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="result-value">68.6</span>
+          <span class="result-label">VLN-CE R2R</span>
+          <p>+21.5 over UniVLA-Navi with task-specific fine-tuned heads.</p>
+        </div>
+        <div class="result-card">
+          <span class="result-value">58.2</span>
+          <span class="result-label">VLN-CE RxR</span>
+          <p>+31.9 over UniVLA-Navi on unseen continuous navigation.</p>
+        </div>
+        <div class="result-card">
+          <span class="result-value">64.5</span>
+          <span class="result-label">SimplerEnv Avg.</span>
+          <p>+29.1 over UniVLA-Mani across representative manipulation tasks.</p>
+        </div>
+        <div class="result-card">
+          <span class="result-value">3B</span>
+          <span class="result-label">Unified Model</span>
+          <p>Outperforms 7B single-task and cross-task baselines without task-specific variants.</p>
+        </div>
+      </div>
+      <figure class="project-figure compact-figure">
+        <img src="./static/images/actionhorizon.png" alt="Action horizon ablation">
+        <figcaption>Action horizon ablation shows horizon 5 gives the best balance for navigation and manipulation.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Qualitative Visualization</h2>
+          <p class="section-lead">
+            Representative examples across simulator and real-world navigation and manipulation.
+          </p>
+        </div>
+      </div>
+      <div class="visual-grid">
+        <figure class="project-figure visual-card">
+          <img src="./static/images/nav_sim_vis_1.png" alt="Simulator navigation visualization">
+          <figcaption>Simulator Navigation</figcaption>
+        </figure>
+        <figure class="project-figure visual-card">
+          <img src="./static/images/mani_sim_vis_1.png" alt="Simulator manipulation visualization">
+          <figcaption>Simulator Manipulation</figcaption>
+        </figure>
+        <figure class="project-figure visual-card">
+          <img src="./static/images/nav_real_vis.png" alt="Real-world navigation visualization">
+          <figcaption>Real-World Navigation</figcaption>
+        </figure>
+        <figure class="project-figure visual-card">
+          <img src="./static/images/mani_real_vis.png" alt="Real-world manipulation visualization">
+          <figcaption>Real-World Manipulation</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section is-light-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Real-World Experiments</h2>
+          <p class="section-lead">
+            OneVLA transfers from simulation to physical robots for both mobile navigation and arm manipulation.
+          </p>
+        </div>
+      </div>
+      <figure class="project-figure compact-figure">
+        <img src="./static/images/realworld_exp.png" alt="Real-world experimental results">
+        <figcaption>
+          Real-world evaluation reports strong performance for both manipulation and navigation tasks.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" type="button">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre><code id="bibtex-code">@article{zhang2026onevla,
+  title={OneVLA: A Unified Framework for Embodied Tasks},
+  author={Zhang, Lingfeng and Hao, Xiaoshuai and Tang, Yingbo and Zhou, Lei and Zhang, Shuyi and Liu, Jinkun and Li, Hongsheng and Zhang, Chenhao and Zhang, Qiang and Ye, Hangjun and Liang, Xiaojun and Chen, Long and Ding, Wenbo},
+  journal={Preprint},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/pdfs/onevla.pdf" aria-label="Paper PDF">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/linglingxiansen/OneVLA" aria-label="Code">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This project page presents OneVLA, a unified vision-language-action framework for
+              embodied navigation and manipulation.
+            </p>
+            <p>
+              This page was adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
