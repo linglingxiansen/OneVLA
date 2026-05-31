@@ -138,6 +138,10 @@ conda activate onevla_simpler
 bash examples/SimplerEnv/eval_simplerenv.sh /path/to/checkpoint.pt
 ```
 
+## Acknowledgement
+
+We thank the open-source community for making this project possible. In particular, we acknowledge the contributions of [StarVLA](https://github.com/starVLA/starVLA), [NaVid-VLN-CE](https://github.com/jzhzhang/NaVid-VLN-CE), [VLN-CE](https://github.com/jacobkrantz/VLN-CE), and other related open-source repositories.
+
 
 
 
