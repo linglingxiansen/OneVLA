@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href=""><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
-  <a href=""><img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow" alt="Hugging Face Model"></a>
+  <a href="https://huggingface.co/llxs/OneVLA"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow" alt="Hugging Face Model"></a>
 </p>
 
 <p align="center">
