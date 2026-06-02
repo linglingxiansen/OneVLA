@@ -1,7 +1,7 @@
 # OneVLA: A Unified Framework for Embodied Tasks
 
 <p align="center">
-  <a href=""><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
+  <a href="https://arxiv.org/pdf/2606.01241"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"></a>
   <a href="https://linglingxiansen.github.io/OneVLA/"><img src="https://img.shields.io/badge/Website-Project_Page-blue?logo=githubpages&logoColor=white" alt="Project Website"></a>
   <a href="https://huggingface.co/llxs/OneVLA"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-yellow" alt="Hugging Face Model"></a>
 </p>
